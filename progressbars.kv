@@ -41,7 +41,7 @@
             color: root.accent_color
 
         Label:
-            text: str(int((root.targettime - root.currenttime) / 100)) + "s"
+            text: str(int(root.displaytime)) + "s"
             opacity: root.progressbaropacity
             pos_hint: {"center_x": .5, "center_y": .9}
             font_size: 40
@@ -91,7 +91,7 @@
             md_bg_color: root.accent_color
 
         MDFillRoundFlatButton:
-            text: str(int(root.displaytime))
+            text: str(int(root.selecttime))
             pos_hint: {"center_x": .5, "center_y": .2}
             md_bg_color: root.accent_color
 
@@ -123,7 +123,6 @@ MDScreen:
                 font_size: 50
                 text_color: root.text_color
                 text:str(int(app.score)) + " points"
-                #text: if app.score < 10: str(round(float(app.score), 1)) + " points" else: str(app.score)
                 pos_hint: {"center_x": .5, "top": .2}
                 size_hint: None, None
                 height: 100
