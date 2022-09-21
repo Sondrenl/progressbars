@@ -31,24 +31,24 @@
     MDRelativeLayout:
 
         MDProgressBar:
-            opacity: root.progressbaropacity
+            opacity: root.progressbar_opacity
             min: 0
-            max: root.targettime - 1
-            value: root.currenttime
+            max: root.target_time - 1
+            value: root.current_time
             pos_hint: {"center_x": .5, "center_y": .6}
             size_hint: .9, .5
             color: root.accent_color
 
         Label:
-            text: str(int(root.displaytime)) + "s"
-            opacity: root.progressbaropacity
+            text: str(int(root.display_time)) + "s"
+            opacity: root.progressbar_opacity
             pos_hint: {"center_x": .5, "center_y": .9}
             font_size: 40
 
         MDFillRoundFlatButton:
             text: "Start"
             on_press: root.start_update()
-            opacity: root.startbuttonopacity
+            opacity: root.start_button_opacity
             pos_hint: {"center_x": .5, "center_y": .6}
             color: root.accent_color
             md_bg_color: root.accent_color
@@ -58,7 +58,7 @@
             text: "+1"
             pos_hint: {"center_x": .7, "center_y": .2}
             size: "60dp", "30dp"
-            on_press: root.change_targettime(1)
+            on_press: root.change_target_time(1)
             disabled: root.disabled
             md_bg_color: root.accent_color
             rounded_button: True
@@ -67,7 +67,7 @@
             id: plusten
             text: "+10"
             pos_hint: {"center_x": .85, "center_y": .2}
-            on_press: root.change_targettime(10)
+            on_press: root.change_target_time(10)
             disabled: root.disabled
             md_bg_color: root.accent_color
             rounded_button: True
@@ -76,7 +76,7 @@
             id: minusone
             text: "-1"
             pos_hint: {"center_x": .3, "center_y": .2}
-            on_press: root.change_targettime(-1)
+            on_press: root.change_target_time(-1)
             disabled: root.disabled
             md_bg_color: root.accent_color
 
@@ -84,13 +84,13 @@
             id: minusten
             text: "-10"
             pos_hint: {"center_x": .15, "center_y": .2}
-            on_press: root.change_targettime(-10)
+            on_press: root.change_target_time(-10)
             rounded_button: True
             disabled: root.disabled
             md_bg_color: root.accent_color
 
         MDFillRoundFlatButton:
-            text: str(int(root.selecttime))
+            text: str(int(root.select_time))
             pos_hint: {"center_x": .5, "center_y": .2}
             md_bg_color: root.accent_color
 
@@ -129,7 +129,7 @@ MDScreen:
 
             MDFillRoundFlatIconButton:
                 icon: "plus-circle-outline"
-                text: "Buy Another Slot (" + str(int(app.newslotprice)) + ")"
+                text: "Buy Another Slot (" + str(int(app.new_slot_price)) + ")"
                 size_hint: None, None
                 width: 800
                 height: 50
