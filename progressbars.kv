@@ -122,7 +122,7 @@ MDScreen:
             Label:
                 font_size: 50
                 text_color: root.text_color
-                text:str(int(app.score)) + " points"
+                text:str(round(app.score, 1)) + " points"
                 pos_hint: {"center_x": .5, "top": .2}
                 size_hint: None, None
                 height: 100
@@ -140,5 +140,4 @@ MDScreen:
                 line_color: 130/255, 135/255, 156/255, 1
                 line_width: 2
                 icon_color: root.text_color
-                set_radius: 45
                 on_press: app.make_card()
