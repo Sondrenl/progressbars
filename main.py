@@ -8,7 +8,7 @@ from kivymd.app import MDApp
 from kivymd.uix.card import MDCard
 
 
-Window.size = (428, 926)
+# Window.size = (428, 926)
 
 
 class TimerCard(MDCard):
