@@ -10,8 +10,8 @@
     progressbar_color: 145/255, 104/255, 218/255, 1
 
     size_hint: None, None
-    width: 875
-    height: 300
+    width: 1368
+    height: 430
     pos_hint: {"center_x": .5, "center_y": .3}
     radius: [45]
 
@@ -26,8 +26,8 @@
         Color:
             rgba: root.background_color
         RoundedRectangle:
-            size: root.width - 9, root.height - 9
-            pos: root.x + 5, root.y + 5
+            size: root.width - 11, root.height - 11
+            pos: root.x + 5.5, root.y + 5.5
             radius: [45]
 
     MDRelativeLayout:
@@ -46,7 +46,7 @@
             text: str(int(root.display_time + 0.9)) + "s"
             opacity: root.progressbar_opacity
             pos_hint: {"center_x": .5, "center_y": .9}
-            font_size: 40
+            font_size: 70
 
         MDFillRoundFlatButton:
             text: "Start"
@@ -56,11 +56,10 @@
             color: root.accent_color
             md_bg_color: root.accent_color
 
-        MDRaisedButton:
+        MDFillRoundFlatButton:
             id: plusone
             text: "+1s"
-            pos_hint: {"center_x": .67, "center_y": .2}
-            size: "60dp", "30dp"
+            pos_hint: {"center_x": .695, "center_y": .2}
             on_press: root.change_target_time(1)
             disabled: root.disabled
             md_bg_color: root.accent_color
@@ -69,7 +68,7 @@
         MDFillRoundFlatButton:
             id: plusten
             text: "+10s"
-            pos_hint: {"center_x": .84, "center_y": .2}
+            pos_hint: {"center_x": .89, "center_y": .2}
             on_press: root.change_target_time(10)
             disabled: root.disabled
             md_bg_color: root.accent_color
@@ -78,7 +77,7 @@
         MDFillRoundFlatButton:
             id: minusone
             text: "-1"
-            pos_hint: {"center_x": .33, "center_y": .2}
+            pos_hint: {"center_x": .305, "center_y": .2}
             on_press: root.change_target_time(-1)
             disabled: root.disabled
             md_bg_color: root.accent_color
@@ -86,7 +85,7 @@
         MDFillRoundFlatButton:
             id: minusten
             text: "-10"
-            pos_hint: {"center_x": .16, "center_y": .2}
+            pos_hint: {"center_x": .11, "center_y": .2}
             on_press: root.change_target_time(-10)
             rounded_button: True
             disabled: root.disabled
@@ -122,7 +121,7 @@ MDScreen:
             adaptive_height: True
 
             Label:
-                font_size: 50
+                font_size: 90
                 text_color: root.text_color
                 text:str(round(app.score, 1)) + " points"
                 pos_hint: {"center_x": .5, "top": .2}
@@ -137,6 +136,6 @@ MDScreen:
                 text_color: root.text_color
                 md_bg_color: root.background_color
                 line_color: root.accent_color
-                line_width: 2
+                line_width: 3
                 icon_color: root.text_color
                 on_press: app.make_card()

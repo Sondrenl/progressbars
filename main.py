@@ -8,7 +8,7 @@ from kivymd.app import MDApp
 from kivymd.uix.card import MDCard
 
 
-Window.size = (500, 926)
+Window.size = (1440, 2960)
 Window.set_icon('icon.png')
 Window.set_title('Progressbars')
 # Window.grab_mouse()
@@ -93,7 +93,7 @@ class ProgressBarsApp(MDApp):
             self.root.ids.box.add_widget(card)
             self.score = self.score - self.new_slot_price
             # make next card more expensive
-            self.new_slot_price = 1000 * len(self.cards) * 0.95
+            self.new_slot_price = 1000 * len(self.cards)
 
         if self.score > self.new_slot_price:
             add_card()
